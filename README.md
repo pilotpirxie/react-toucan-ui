@@ -1,2 +1,2 @@
-# react-native-toucan-ui
-React Native Components for beautiful mobile UI with minimum dependency
+# react-toucan-ui
+React components for beautiful UI with minimum dependency
