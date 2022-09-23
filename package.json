@@ -33,7 +33,7 @@
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
