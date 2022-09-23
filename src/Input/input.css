@@ -1,0 +1,15 @@
+.input-wrapper {
+    display: flex;
+}
+
+input {
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+}
+
+.wide {
+    width: 100%;
+}
