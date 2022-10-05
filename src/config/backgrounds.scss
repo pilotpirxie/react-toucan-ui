@@ -1,0 +1,55 @@
+@import "./colors";
+
+@mixin background($bgColor, $color) {
+  background-color: $bgColor;
+  color: $color;
+
+  &:hover {
+    background-color: darken($bgColor, 5%);
+  }
+
+  &:active {
+    background-color: darken($bgColor, 10%);
+  }
+
+  &:disabled {
+    background-color: lighten($bgColor, 40%);
+    color: lighten($color, 40%);
+  }
+}
+
+.backgroundPrimary {
+  @include background($color-primary, white);
+}
+
+.backgroundSecondary {
+  @include background($color-secondary, white);
+}
+
+.backgroundTertiary {
+  @include background($color-tertiary, black);
+}
+
+.backgroundSuccess {
+  @include background($color-success, white);
+}
+
+.backgroundInfo {
+  @include background($color-info, white);
+}
+
+.backgroundWarning {
+  @include background($color-warning, white);
+}
+
+.backgroundDanger {
+  @include background($color-danger, white);
+}
+
+.backgroundLight {
+  @include background($color-light, black);
+}
+
+.backgroundDark {
+  @include background($color-dark, white);
+}

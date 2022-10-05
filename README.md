@@ -1,18 +1,16 @@
 # react-toucan-ui
 React components for beautiful UI
 
-- [ ] Colours
-  - [ ] Primary
-  - [ ] Secondary
-  - [ ] Tertiary
-  - [ ] Success
-  - [ ] Warning
-  - [ ] Danger
-  - [ ] Info
-  - [ ] Light
-  - [ ] Dark
-  - [ ] White
-  - [ ] Black
+- [x] Colours
+  - [x] Primary
+  - [x] Secondary
+  - [x] Tertiary
+  - [x] Success
+  - [x] Warning
+  - [x] Danger
+  - [x] Info
+  - [x] Light
+  - [x] Dark
 
 - [ ] Buttons
   - [ ] Basic

@@ -1,48 +1,58 @@
+import cx from 'classnames';
 import React from 'react';
-import './button.scss';
+import styles from './button.module.scss';
 
-export interface ButtonProps {
+export type ButtonProps = {
   /**
-   * Is this the principal call to action on the page?
+   * The color of the button.
    */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
+  color?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'success' | 'info' | 'light' | 'dark';
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge';
   /**
    * Button contents
    */
-  label: string;
+  children: React.ReactNode | string;
   /**
-   * Optional click handler
+   * Disabled state
    */
-  onClick?: () => void;
-}
+  disabled?: boolean;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 /**
  * Primary UI component for user interaction
  */
 export function Button({
-  primary = false,
   size = 'medium',
-  backgroundColor,
-  label,
+  color = 'primary',
+  children,
   ...props
 }: ButtonProps) {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      className={cx({
+        [styles.backgroundPrimary]: color === 'primary',
+        [styles.backgroundSecondary]: color === 'secondary',
+        [styles.backgroundTertiary]: color === 'tertiary',
+        [styles.backgroundSuccess]: color === 'success',
+        [styles.backgroundInfo]: color === 'info',
+        [styles.backgroundWarning]: color === 'warning',
+        [styles.backgroundDanger]: color === 'danger',
+        [styles.backgroundLight]: color === 'light',
+        [styles.backgroundDark]: color === 'dark',
+
+        [styles.sizeExtraSmall]: size === 'extraSmall',
+        [styles.sizeSmall]: size === 'small',
+        [styles.sizeMedium]: size === 'medium',
+        [styles.sizeLarge]: size === 'large',
+        [styles.sizeExtraLarge]: size === 'extraLarge',
+      })}
       {...props}
     >
-      {label}
+      {children}
     </button>
   );
 }
