@@ -60,5 +60,8 @@
     "package.json",
     "LICENSE"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "css-loader": "^6.7.1"
+  }
 }
