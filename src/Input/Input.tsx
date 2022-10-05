@@ -20,17 +20,22 @@ export interface InputProps {
 /**
  * Basic input component
  */
-export const Input = ({
+export function Input({
   onChange,
   value,
   wide = false,
   ...props
-}: InputProps) => {
+}: InputProps) {
   return (
     <div className="input-wrapper">
-      <input onChange={onChange} className={cx({
-        wide: wide,
-      })}  value={value} {...props} />
+      <input
+        onChange={onChange}
+        className={cx({
+          wide,
+        })}
+        value={value}
+        {...props}
+      />
     </div>
   );
-};
+}
