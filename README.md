@@ -13,12 +13,9 @@ React components for beautiful UI
   - [x] Dark
 
 - [ ] Buttons
-  - [ ] Basic
-  - [ ] Primary
-  - [ ] Secondary
+  - [x] Basic
   - [ ] Outline
   - [ ] Link
-  - [ ] Disabled
 
 - [ ] Forms
   - [ ] Datetime
