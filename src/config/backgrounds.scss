@@ -17,39 +17,89 @@
     color: lighten($color, 40%);
   }
 }
+@mixin outline($bgColor) {
+  background-color: white !important;
+  color: $bgColor !important;
+  border: 2px solid $bgColor;
+
+  &:hover {
+    background-color: $bgColor !important;
+    color: white !important;
+  }
+
+  &:active {
+    background-color: darken($bgColor, 5%) !important;
+    color: white !important;
+  }
+
+  &:disabled {
+    border: 2px solid lighten($bgColor, 40%) !important;
+    color: $color-disabled !important;
+    &:hover {
+      background-color: white !important;
+    }
+  }
+}
 
 .backgroundPrimary {
   @include background($color-primary, white);
+  &.outlined {
+    @include outline($color-primary);
+  }
 }
 
 .backgroundSecondary {
   @include background($color-secondary, white);
+  &.outlined {
+    @include outline($color-secondary);
+  }
 }
 
 .backgroundTertiary {
   @include background($color-tertiary, black);
+  &.outlined {
+    @include outline($color-tertiary);
+  }
 }
 
 .backgroundSuccess {
   @include background($color-success, white);
+  &.outlined {
+    @include outline($color-success);
+  }
 }
 
 .backgroundInfo {
   @include background($color-info, white);
+  &.outlined {
+    @include outline($color-info);
+  }
 }
 
 .backgroundWarning {
   @include background($color-warning, white);
+  &.outlined {
+    @include outline($color-warning);
+  }
 }
 
 .backgroundDanger {
   @include background($color-danger, white);
+  &.outlined {
+    @include outline($color-danger);
+  }
 }
 
 .backgroundLight {
   @include background($color-light, black);
+  &.outlined {
+    @include outline($color-light);
+  }
 }
 
 .backgroundDark {
   @include background($color-dark, white);
+  &.outlined {
+    @include outline($color-dark);
+  }
 }
