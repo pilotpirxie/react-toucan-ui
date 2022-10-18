@@ -1,42 +1,43 @@
 @import "./colors";
 
-@mixin background($bgColor, $color) {
-  background-color: $bgColor;
-  color: $color;
+@mixin background($bgColor, $color, $outline: false) {
+  @if $outline {
+    background-color: rgba(0, 0, 0, 0);
+    color: $bgColor;
+    border: 2px solid $bgColor;
 
-  &:hover {
-    background-color: darken($bgColor, 5%);
-  }
-
-  &:active {
-    background-color: darken($bgColor, 10%);
-  }
-
-  &:disabled {
-    background-color: lighten($bgColor, 40%);
-    color: lighten($color, 40%);
-  }
-}
-@mixin outline($bgColor) {
-  background-color: white !important;
-  color: $bgColor !important;
-  border: 2px solid $bgColor;
-
-  &:hover {
-    background-color: $bgColor !important;
-    color: white !important;
-  }
-
-  &:active {
-    background-color: darken($bgColor, 5%) !important;
-    color: white !important;
-  }
-
-  &:disabled {
-    border: 2px solid lighten($bgColor, 40%) !important;
-    color: $color-disabled !important;
     &:hover {
-      background-color: white !important;
+      background-color: $bgColor;
+      color: white;
+    }
+
+    &:active {
+      background-color: darken($bgColor, 5%);
+      color: white;
+    }
+
+    &:disabled {
+      border: 2px solid lighten($bgColor, 40%);
+      color: $color-disabled;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0);
+      }
+    }
+  } @else {
+    background-color: $bgColor;
+    color: $color;
+
+    &:hover {
+      background-color: darken($bgColor, 5%);
+    }
+
+    &:active {
+      background-color: darken($bgColor, 10%);
+    }
+
+    &:disabled {
+      background-color: lighten($bgColor, 40%);
+      color: lighten($color, 40%);
     }
   }
 }
