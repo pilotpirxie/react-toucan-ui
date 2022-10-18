@@ -45,62 +45,62 @@
 .backgroundPrimary {
   @include background($color-primary, white);
   &.outlined {
-    @include outline($color-primary);
+    @include background($color-primary, white, "outline");
   }
 }
 
 .backgroundSecondary {
   @include background($color-secondary, white);
   &.outlined {
-    @include outline($color-secondary);
+    @include background($color-secondary, white, "outline");
   }
 }
 
 .backgroundTertiary {
   @include background($color-tertiary, black);
   &.outlined {
-    @include outline($color-tertiary);
+    @include background($color-tertiary, white, "outline");
   }
 }
 
 .backgroundSuccess {
   @include background($color-success, white);
   &.outlined {
-    @include outline($color-success);
+    @include background($color-success, white, "outline");
   }
 }
 
 .backgroundInfo {
   @include background($color-info, white);
   &.outlined {
-    @include outline($color-info);
+    @include background($color-info, white, "outline");
   }
 }
 
 .backgroundWarning {
   @include background($color-warning, white);
   &.outlined {
-    @include outline($color-warning);
+    @include background($color-warning, white, "outline");
   }
 }
 
 .backgroundDanger {
   @include background($color-danger, white);
   &.outlined {
-    @include outline($color-danger);
+    @include background($color-danger, white, "outline");
   }
 }
 
 .backgroundLight {
   @include background($color-light, black);
   &.outlined {
-    @include outline($color-light);
+    @include background($color-light, white, "outline");
   }
 }
 
 .backgroundDark {
   @include background($color-dark, white);
   &.outlined {
-    @include outline($color-dark);
+    @include background($color-dark, white, "outline");
   }
 }
