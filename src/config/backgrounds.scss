@@ -1,7 +1,7 @@
 @import "./colors";
 
-@mixin background($bgColor, $color, $outline: false) {
-  @if $outline {
+@mixin background($bgColor, $color) {
+  &.outlined {
     background-color: rgba(0, 0, 0, 0);
     color: $bgColor;
     border: 2px solid $bgColor;
@@ -23,7 +23,8 @@
         background-color: rgba(0, 0, 0, 0);
       }
     }
-  } @else {
+  }
+  &:not(.outlined) {
     background-color: $bgColor;
     color: $color;
 
@@ -44,63 +45,36 @@
 
 .backgroundPrimary {
   @include background($color-primary, white);
-  &.outlined {
-    @include background($color-primary, white, "outline");
-  }
 }
 
 .backgroundSecondary {
   @include background($color-secondary, white);
-  &.outlined {
-    @include background($color-secondary, white, "outline");
-  }
 }
 
 .backgroundTertiary {
   @include background($color-tertiary, black);
-  &.outlined {
-    @include background($color-tertiary, white, "outline");
-  }
 }
 
 .backgroundSuccess {
   @include background($color-success, white);
-  &.outlined {
-    @include background($color-success, white, "outline");
-  }
 }
 
 .backgroundInfo {
   @include background($color-info, white);
-  &.outlined {
-    @include background($color-info, white, "outline");
-  }
 }
 
 .backgroundWarning {
   @include background($color-warning, white);
-  &.outlined {
-    @include background($color-warning, white, "outline");
-  }
 }
 
 .backgroundDanger {
   @include background($color-danger, white);
-  &.outlined {
-    @include background($color-danger, white, "outline");
-  }
 }
 
 .backgroundLight {
   @include background($color-light, black);
-  &.outlined {
-    @include background($color-light, white, "outline");
-  }
 }
 
 .backgroundDark {
   @include background($color-dark, white);
-  &.outlined {
-    @include background($color-dark, white, "outline");
-  }
 }
