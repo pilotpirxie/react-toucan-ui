@@ -14,8 +14,8 @@ React components for beautiful UI
 
 - [ ] Buttons
   - [x] Basic
-  - [ ] Outline
-  - [ ] Link
+  - [x] Outline
+  - [x] Link
 
 - [ ] Forms
   - [ ] Datetime

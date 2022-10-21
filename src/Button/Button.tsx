@@ -1,29 +1,29 @@
-import cx from "classnames";
-import React from "react";
-import styles from "./button.module.scss";
+import cx from 'classnames';
+import React from 'react';
+import styles from './button.module.scss';
 
 export type ButtonProps = {
   /**
    * The color of the button.
    */
   color?:
-    | "primary"
-    | "secondary"
-    | "tertiary"
-    | "danger"
-    | "warning"
-    | "success"
-    | "info"
-    | "light"
-    | "dark";
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'danger'
+    | 'warning'
+    | 'success'
+    | 'info'
+    | 'light'
+    | 'dark';
   /**
    * How large should the button be?
    */
-  size?: "extraSmall" | "small" | "medium" | "large" | "extraLarge";
+  size?: 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge';
   /**
-   * Should button be outlined or filled?
+   * Should button have regular look, be outlined or serve as a link?
    */
-  outlined?: boolean;
+  style?: 'standard' | 'outlined' | 'link';
   /**
    * Button contents
    */
@@ -38,9 +38,9 @@ export type ButtonProps = {
  * Primary UI component for user interaction
  */
 export function Button({
-  size = "medium",
-  color = "primary",
-  outlined = false,
+  size = 'medium',
+  color = 'primary',
+  style = 'standard',
   children,
   ...props
 }: ButtonProps) {
@@ -48,23 +48,24 @@ export function Button({
     <button
       type="button"
       className={cx({
-        [styles.backgroundPrimary]: color === "primary",
-        [styles.backgroundSecondary]: color === "secondary",
-        [styles.backgroundTertiary]: color === "tertiary",
-        [styles.backgroundSuccess]: color === "success",
-        [styles.backgroundInfo]: color === "info",
-        [styles.backgroundWarning]: color === "warning",
-        [styles.backgroundDanger]: color === "danger",
-        [styles.backgroundLight]: color === "light",
-        [styles.backgroundDark]: color === "dark",
+        [styles.backgroundPrimary]: color === 'primary',
+        [styles.backgroundSecondary]: color === 'secondary',
+        [styles.backgroundTertiary]: color === 'tertiary',
+        [styles.backgroundSuccess]: color === 'success',
+        [styles.backgroundInfo]: color === 'info',
+        [styles.backgroundWarning]: color === 'warning',
+        [styles.backgroundDanger]: color === 'danger',
+        [styles.backgroundLight]: color === 'light',
+        [styles.backgroundDark]: color === 'dark',
 
-        [styles.sizeExtraSmall]: size === "extraSmall",
-        [styles.sizeSmall]: size === "small",
-        [styles.sizeMedium]: size === "medium",
-        [styles.sizeLarge]: size === "large",
-        [styles.sizeExtraLarge]: size === "extraLarge",
+        [styles.sizeExtraSmall]: size === 'extraSmall',
+        [styles.sizeSmall]: size === 'small',
+        [styles.sizeMedium]: size === 'medium',
+        [styles.sizeLarge]: size === 'large',
+        [styles.sizeExtraLarge]: size === 'extraLarge',
 
-        [styles.outlined]: outlined === true,
+        [styles.outlined]: style === 'outlined',
+        [styles.link]: style === 'link',
       })}
       {...props}
     >

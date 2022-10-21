@@ -24,7 +24,29 @@
       }
     }
   }
-  &:not(.outlined) {
+  &.link {
+    background-color: rgba(0, 0, 0, 0);
+    color: $bgColor;
+    text-decoration: underline;
+
+    &:hover {
+      background-color: $bgColor;
+      color: white;
+    }
+
+    &:active {
+      background-color: darken($bgColor, 5%);
+      color: white;
+    }
+
+    &:disabled {
+      color: $color-disabled;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0);
+      }
+    }
+  }
+  &:not(.outlined):not(.link) {
     background-color: $bgColor;
     color: $color;
 
