@@ -6,6 +6,12 @@ import { Button } from './Button';
 export default {
   title: 'Form/Button',
   component: Button,
+  argTypes: {
+    style: {
+      options: ['standard', 'outlined', 'link'],
+      control: { type: 'select' },
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
