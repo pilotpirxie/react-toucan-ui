@@ -26,7 +26,7 @@ export const Outlined = Template.bind({});
 Outlined.args = {
   color: 'primary',
   children: 'Button',
-  outlined: true,
+  style: 'outlined',
 };
 
 export const Disabled = Template.bind({});

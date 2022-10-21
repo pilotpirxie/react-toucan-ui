@@ -21,9 +21,9 @@ export type ButtonProps = {
    */
   size?: 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge';
   /**
-   * Should button be outlined or filled?
+   * Should button have regular look, be outlined or serve as a link?
    */
-  outlined?: boolean;
+  style?: 'standard' | 'outlined' | 'link';
   /**
    * Button contents
    */
@@ -40,7 +40,7 @@ export type ButtonProps = {
 export function Button({
   size = 'medium',
   color = 'primary',
-  outlined = false,
+  style = 'standard',
   children,
   ...props
 }: ButtonProps) {
@@ -64,7 +64,8 @@ export function Button({
         [styles.sizeLarge]: size === 'large',
         [styles.sizeExtraLarge]: size === 'extraLarge',
 
-        [styles.outlined]: outlined === true,
+        [styles.outlined]: style === 'outlined',
+        [styles.link]: style === 'link',
       })}
       {...props}
     >
