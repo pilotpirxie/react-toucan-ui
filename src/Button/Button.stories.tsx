@@ -29,6 +29,13 @@ Outlined.args = {
   style: 'outlined',
 };
 
+export const Link = Template.bind({});
+Link.args = {
+  color: 'primary',
+  children: 'Button',
+  style: 'link',
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: 'Button',
