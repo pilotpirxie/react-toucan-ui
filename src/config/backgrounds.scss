@@ -8,12 +8,12 @@
 
     &:hover {
       background-color: $bgColor;
-      color: white;
+      color: $color;
     }
 
     &:active {
       background-color: darken($bgColor, 5%);
-      color: white;
+      color: $color;
     }
 
     &:disabled {
@@ -30,13 +30,11 @@
     text-decoration: underline;
 
     &:hover {
-      background-color: $bgColor;
-      color: white;
+      color: darken($bgColor,5%);
     }
 
     &:active {
-      background-color: darken($bgColor, 5%);
-      color: white;
+      color: darken($bgColor, 10%);
     }
 
     &:disabled {
