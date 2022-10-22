@@ -12,7 +12,7 @@ React components for beautiful UI
   - [x] Light
   - [x] Dark
 
-- [ ] Buttons
+- [x] Buttons
   - [x] Basic
   - [x] Outline
   - [x] Link

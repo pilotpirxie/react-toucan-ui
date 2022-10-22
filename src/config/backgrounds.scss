@@ -4,20 +4,20 @@
   &.outlined {
     background-color: rgba(0, 0, 0, 0);
     color: $bgColor;
-    border: 2px solid $bgColor;
+    outline: 2px solid $bgColor;
 
     &:hover {
       background-color: $bgColor;
-      color: white;
+      color: $color;
     }
 
     &:active {
       background-color: darken($bgColor, 5%);
-      color: white;
+      color: $color;
     }
 
     &:disabled {
-      border: 2px solid lighten($bgColor, 40%);
+      outline: 2px solid lighten($bgColor, 40%);
       color: $color-disabled;
       &:hover {
         background-color: rgba(0, 0, 0, 0);
@@ -30,13 +30,11 @@
     text-decoration: underline;
 
     &:hover {
-      background-color: $bgColor;
-      color: white;
+      color: darken($bgColor,5%);
     }
 
     &:active {
-      background-color: darken($bgColor, 5%);
-      color: white;
+      color: darken($bgColor, 10%);
     }
 
     &:disabled {
