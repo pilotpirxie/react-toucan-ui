@@ -62,6 +62,7 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "css-loader": "^6.7.1"
+    "css-loader": "^6.7.1",
+    "iconoir": "^5.3.2"
   }
 }
