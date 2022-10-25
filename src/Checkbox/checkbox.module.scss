@@ -1,0 +1,16 @@
+@import "../config/colors";
+@import "../config/backgrounds";
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  outline: 1px solid $color-dark;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+  &:checked{
+    background-image: url('iconoir/icons/check.svg');
+    background-position: center;
+  }
+}
