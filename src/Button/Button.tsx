@@ -19,7 +19,7 @@ export type ButtonProps = {
   /**
    * How large should the button be?
    */
-  size?: 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge';
+  size?: 'small' | 'medium' | 'large';
   /**
    * Should button have regular look, be outlined or serve as a link?
    */
@@ -58,11 +58,9 @@ export function Button({
         [styles.backgroundLight]: color === 'light',
         [styles.backgroundDark]: color === 'dark',
 
-        [styles.sizeExtraSmall]: size === 'extraSmall',
         [styles.sizeSmall]: size === 'small',
         [styles.sizeMedium]: size === 'medium',
         [styles.sizeLarge]: size === 'large',
-        [styles.sizeExtraLarge]: size === 'extraLarge',
 
         [styles.outlined]: style === 'outlined',
         [styles.link]: style === 'link',
