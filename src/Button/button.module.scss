@@ -22,6 +22,6 @@ $baseSize:1em;
 @each $size,$ratio in $sizes {
   .size#{$size}{
     font-size: $ratio*$baseSize;
-    padding: ($ratio*$baseSize/2) ($ratio*$baseSize*3);
+    padding: calc($ratio*$baseSize/2) calc($ratio*$baseSize*3);
   }
 }
