@@ -22,9 +22,9 @@ Basic.args = {
   children: 'Button',
 };
 
-export const ExtraLarge = Template.bind({});
-ExtraLarge.args = {
-  size: 'extraLarge',
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
   children: 'Button',
 };
 
