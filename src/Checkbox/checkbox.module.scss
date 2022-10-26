@@ -1,6 +1,8 @@
 @import "../config/colors";
 @import "../config/backgrounds";
 
+$check-icon: "data:image/svg+xml,%3Csvg width='24' height='24' stroke-width='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13L9 17L19 7' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E";
+
 input[type="checkbox"] {
   appearance: none;
   width: 24px;
@@ -10,7 +12,7 @@ input[type="checkbox"] {
   cursor: pointer;
   display: inline-block;
   &:checked{
-    background-image: url('iconoir/icons/check.svg');
+    background-image: url($check-icon);
     background-position: center;
   }
 }
