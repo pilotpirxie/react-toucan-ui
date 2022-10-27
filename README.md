@@ -19,9 +19,9 @@ React components for beautiful UI
 
 - [ ] Forms
   - [ ] Datetime
-  - [ ] Checkbox
+  - [x] Checkbox
   - [ ] Switch
-  - [ ] Radio
+  - [x] Radio
   - [ ] Range slider
   - [ ] Text
   - [ ] Number
