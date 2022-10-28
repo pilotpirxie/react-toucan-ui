@@ -1,8 +1,7 @@
 import React from 'react';
 import './checkbox.module.scss';
 
-export type CheckboxProps = {
-} & React.InputHTMLAttributes<HTMLInputElement>;
+export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
  * Checkbox component
