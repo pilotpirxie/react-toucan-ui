@@ -1,8 +1,7 @@
 import React from 'react';
 import './radio.module.scss';
 
-export type RadioProps = {
-} & React.InputHTMLAttributes<HTMLInputElement>;
+export type RadioProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
  * Radio component
