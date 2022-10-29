@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} 
 
 export const Basic = Template.bind({});
 Basic.args = {
-  checked: true,
+  defaultChecked: true,
 };
