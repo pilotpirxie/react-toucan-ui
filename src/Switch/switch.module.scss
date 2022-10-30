@@ -1,0 +1,30 @@
+@import "../config/colors";
+@import "../config/backgrounds";
+
+$test:-3px;
+.switch{
+  width: 45px;
+  height: 15px;
+  background: #555;
+  margin: 20px 10px;
+  position: relative;
+  border-radius: 5px;
+  & label{
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -2px;
+    left: $test;
+    background: #ccc;
+    & input{
+      visibility: hidden;
+    }
+  }
+}
+.move {
+  left: 27px !important;
+}
