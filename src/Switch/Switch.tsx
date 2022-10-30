@@ -3,19 +3,26 @@ import React, { useState } from 'react';
 import styles from './switch.module.scss';
 
 export type SwitchProps = {
+  /**
+   * ID of checkbox, also used for label
+   */
   id:string;
-  defaultChecked: boolean;
-  checked: boolean;
-}&React.InputHTMLAttributes<HTMLInputElement> & React.LabelHTMLAttributes<HTMLLabelElement>;
+   /**
+   * Should switch be turned on by default?
+   */
+  checked?: boolean;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
  * Switch component
  */
 export function Switch({
-  id = 'switch',
+  id,
+  checked = false,
   ...props
 }: SwitchProps) {
-  const [isChecked, setIsChecked] = useState(props.defaultChecked || props.checked);
+  const [isChecked, setIsChecked] = useState(checked);
+
   return (
     <div
       className={cx({
@@ -35,6 +42,7 @@ export function Switch({
         <input
           type="checkbox"
           id={id}
+          checked={isChecked}
           onChange={(e) => setIsChecked(e.target.checked)}
           {...props}
         />
