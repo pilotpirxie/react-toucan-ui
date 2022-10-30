@@ -1,5 +1,6 @@
+import cx from 'classnames';
 import React from 'react';
-import './checkbox.module.scss';
+import styles from './checkbox.module.scss';
 
 export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -12,7 +13,7 @@ export function Checkbox({
   return (
     <input
       type="checkbox"
-      className="checkbox"
+      className={cx({ [styles.checkbox]: true })}
       {...props}
     />
   );
