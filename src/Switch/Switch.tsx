@@ -20,9 +20,18 @@ export function Switch({
     <div
       className={cx({
         [styles.switch]: true,
+        [styles.outlinePrimary]: isChecked,
+        [styles.outlineSecondary]: !isChecked,
       })}
     >
-      <label htmlFor={id} className={cx({ [styles.move]: isChecked })}>
+      <label
+        htmlFor={id}
+        className={cx({
+          [styles.move]: isChecked,
+          [styles.bgPrimary]: isChecked,
+          [styles.bgSecondary]: !isChecked,
+        })}
+      >
         <input
           type="checkbox"
           id={id}
