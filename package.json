@@ -21,6 +21,8 @@
     "@types/react": "^18.0.21",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "babel-loader": "^8.2.5",
     "classnames": "^2.3.2",
     "eslint": "8.22.0",
@@ -43,7 +45,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "./scripts/build.sh",
     "storybook": "start-storybook -p 6006",
     "docs": "build-storybook -o docs",
     "lint": "eslint ./src/ --ext .js,.jsx,.ts,.tsx",
@@ -65,6 +67,6 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0" 
+    "react-dom": "^18.2.0"
   }
 }
