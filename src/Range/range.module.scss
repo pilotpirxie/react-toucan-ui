@@ -1,12 +1,20 @@
 @import "../config/colors";
 @import "../config/backgrounds";
-
+:root{
+  --progress:50%;
+}
 .slider{
   display: flex;
   height: 8px;
   width: 160px;
   box-shadow:0px 0px 0px 1px $color-dark inset;
   border-radius: 4px;
+  & .progress{
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, $color-primary var(--progress), transparent 0%);
+  }
   input[type="range"] {
     &.range{
       width: 100%;
