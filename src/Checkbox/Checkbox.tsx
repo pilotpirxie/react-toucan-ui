@@ -1,4 +1,3 @@
-import cx from 'classnames';
 import React from 'react';
 import styles from './checkbox.module.scss';
 
@@ -13,7 +12,7 @@ export function Checkbox({
   return (
     <input
       type="checkbox"
-      className={cx({ [styles.checkbox]: true })}
+      className={styles.checkbox}
       {...props}
     />
   );

@@ -10,7 +10,7 @@ export type SwitchProps = {
    /**
    * Should switch be turned on by default?
    */
-  checked?: boolean;
+  defaultChecked?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
@@ -18,18 +18,20 @@ export type SwitchProps = {
  */
 export function Switch({
   id,
-  checked = false,
+  defaultChecked = false,
   ...props
 }: SwitchProps) {
-  const [isChecked, setIsChecked] = useState(checked);
+  const [isChecked, setIsChecked] = useState(defaultChecked);
 
   return (
     <div
-      className={cx({
-        [styles.switch]: true,
-        [styles.outlinePrimary]: isChecked,
-        [styles.outlineSecondary]: !isChecked,
-      })}
+      className={cx(
+        styles.switch,
+        {
+          [styles.outlinePrimary]: isChecked,
+          [styles.outlineSecondary]: !isChecked,
+        },
+      )}
     >
       <label
         htmlFor={id}
