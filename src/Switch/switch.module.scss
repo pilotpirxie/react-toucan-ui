@@ -1,0 +1,42 @@
+@import "../config/colors";
+@import "../config/backgrounds";
+
+.switch{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 48px;
+  height: 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  & .indicator{
+    display: inline-block;
+    width: 14px;
+    height: 16px;
+    border-radius: 3px;
+    transition: all .25s ease;
+    transform: translate(4px,0);
+  }
+  & input{
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+.move {
+  transform: translate(30px,0px) !important;
+}
+.bgPrimary{
+  background-color: $color-primary;
+}
+.bgSecondary{
+  background-color: $color-secondary;
+}
+.outlinePrimary{
+  outline: 1px solid $color-primary;
+}
+.outlineSecondary{
+  outline: 1px solid $color-secondary;
+}

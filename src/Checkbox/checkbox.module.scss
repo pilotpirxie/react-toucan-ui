@@ -3,7 +3,7 @@
 
 $check-icon: "data:image/svg+xml,%3Csvg width='24' height='24' stroke-width='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13L9 17L19 7' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E";
 
-input[type="checkbox"] {
+input[type="checkbox"].checkbox {
   appearance: none;
   width: 24px;
   height: 24px;
