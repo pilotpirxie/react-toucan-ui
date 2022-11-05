@@ -24,7 +24,8 @@ export function Switch({
   const [isChecked, setIsChecked] = useState(defaultChecked);
 
   return (
-    <div
+    <label
+      htmlFor={id}
       className={cx(
         styles.switch,
         {
@@ -33,22 +34,22 @@ export function Switch({
         },
       )}
     >
-      <label
-        htmlFor={id}
-        className={cx({
+      <div className={cx(
+        styles.indicator,
+        {
           [styles.move]: isChecked,
           [styles.bgPrimary]: isChecked,
           [styles.bgSecondary]: !isChecked,
-        })}
-      >
-        <input
-          type="checkbox"
-          id={id}
-          checked={isChecked}
-          onChange={(e) => setIsChecked(e.target.checked)}
-          {...props}
-        />
-      </label>
-    </div>
+        },
+      )}
+      />
+      <input
+        type="checkbox"
+        id={id}
+        checked={isChecked}
+        onChange={(e) => setIsChecked(e.target.checked)}
+        {...props}
+      />
+    </label>
   );
 }

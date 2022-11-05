@@ -2,27 +2,31 @@
 @import "../config/backgrounds";
 
 .switch{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 48px;
   height: 24px;
-  position: relative;
   border-radius: 6px;
-  & label{
-    display: block;
+  cursor: pointer;
+  & .indicator{
+    display: inline-block;
     width: 14px;
     height: 16px;
     border-radius: 3px;
-    transition: all .3s ease;
-    cursor: pointer;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    & input{
-      visibility: hidden;
-    }
+    transition: all .25s ease;
+    transform: translate(4px,0);
+  }
+  & input{
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
   }
 }
 .move {
-  left: 30px !important;
+  transform: translate(30px,0px) !important;
 }
 .bgPrimary{
   background-color: $color-primary;
