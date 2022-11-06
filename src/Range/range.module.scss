@@ -3,60 +3,11 @@
 
   input[type="range"] {
     &.range{
-	background: #fff0;
-	overflow: hidden;
-      color: $color-primary;
-      --thumb-height: 16px;
-      --track-height: 8px;
-      --brightness-hover: 180%;
-      --brightness-down: 80%;
-      --clip-edges: 0.125em;
-      &::-webkit-slider-runnable-track,
-      &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        transition: all ease 100ms;
-        height: var(--thumb-height);
-      }
-      &::-webkit-slider-thumb {
-        --thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
-        --clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
-        --clip-bottom: calc(var(--thumb-height) - var(--clip-top));
-        --clip-further: calc(100% + 1px);
-        --box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
-          100vmax currentColor;
-
-        width: var(--thumb-width, var(--thumb-height));
-        background-color: $color-dark;
-        box-shadow: var(--box-fill);
-        border-radius: var(--thumb-width, var(--thumb-height));
-
-        filter: brightness(100%);
-        clip-path: polygon(
-          100% -1px,
-          var(--clip-edges) -1px,
-          0 var(--clip-top),
-          -100vmax var(--clip-top),
-          -100vmax var(--clip-bottom),
-          0 var(--clip-bottom),
-          var(--clip-edges) 100%,
-          var(--clip-further) var(--clip-further)
-        );
-      }
-      &::-webkit-slider-runnable-track {
-        background: linear-gradient($color-secondary 0 0) scroll no-repeat center /
-          100% calc(var(--track-height) + 1px);
-      }
+	    background: transparent;
+    	overflow: hidden;
       margin: 0;
       padding: 0;
-      -webkit-appearance: none;
-      appearance: none;
       border: none;
-      background: none;
-      &:focus{
-        outline: none;
-        border: none;
-      }
-      //&::-webkit-slider-runnable-track,
       &::-moz-range-track {
         appearance: none;
         border-radius: 4px;
@@ -68,15 +19,6 @@
         border-radius: 4px;
         background: $color-primary;
       }
-      /*
-      &::-webkit-slider-runnable-track{
-        appearance: none;
-        border-radius: 4px;
-        height: 8px;
-        box-shadow:0px 0px 0px 1px $color-dark inset;
-      }
-      */
-      //&::-webkit-slider-thumb,
       &::-moz-range-thumb {
         height: 16px;
         width: 16px;
@@ -85,10 +27,5 @@
         outline: none;
         border-radius: 100%;
       }
-      /*&::-webkit-slider-thumb{
-        margin-top: -4px;
-        box-shadow: -80px 0 0 80px $color-primary;
-      }
-      */
     }
   }
