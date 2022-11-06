@@ -22,7 +22,7 @@ React components for beautiful UI
   - [x] Checkbox
   - [x] Switch
   - [x] Radio
-  - [ ] Range slider
+  - [x] Range slider
   - [ ] Text
   - [ ] Number
   - [ ] Password with reveal icon
