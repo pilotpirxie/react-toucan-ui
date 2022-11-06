@@ -8,21 +8,18 @@
       margin: 0;
       padding: 0;
       border: none;
-      &::-moz-range-track,
-      &::-ms-fill-upper {
+      &::-moz-range-track {
         appearance: none;
         border-radius: 4px;
         height: 8px;
         box-shadow:0px 0px 0px 1px $color-dark inset;
       }
-      &::-moz-range-progress,
-      &::-ms-fill-lower {
+      &::-moz-range-progress{
         height: 8px;
         border-radius: 4px;
         background: $color-primary;
       }
-      &::-moz-range-thumb,
-      &::-ms-thumb {
+      &::-moz-range-thumb {
         height: 16px;
         width: 16px;
         background: $color-dark;
