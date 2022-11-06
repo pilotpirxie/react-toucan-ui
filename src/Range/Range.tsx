@@ -1,5 +1,4 @@
-import cx from 'classnames';
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './range.module.scss';
 
 export type RangeProps = {
@@ -20,32 +19,12 @@ export function Range({
   id,
   ...props
 }: RangeProps) {
-  const handleChange = (e:any) => {
-    const slider = {
-      min: 0,
-      max: 100,
-      progress: 50,
-    };
-    if (parseInt(e.target.min, 10)) {
-      slider.min = parseInt(e.target.min, 10);
-    }
-    if (parseInt(e.target.max, 10)) {
-      slider.max = parseInt(e.target.max, 10);
-    }
-    slider.progress = (((e.target.value - slider.min) / (slider.max - slider.min)) * 100);
-    document.documentElement.style.setProperty('--progress', `${slider.progress}%`);
-  };
   return (
-    <div className={styles.slider}>
-      <div className={styles.progress}>
-        <input
-          type="range"
-          id={id}
-          className={styles.range}
-          onChange={(e) => handleChange(e)}
-          {...props}
-        />
-      </div>
-    </div>
+    <input
+      type="range"
+      id={id}
+      className={styles.range}
+      {...props}
+    />
   );
 }
