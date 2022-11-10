@@ -23,7 +23,7 @@ React components for beautiful UI
   - [x] Switch
   - [x] Radio
   - [x] Range slider
-  - [ ] Text
+  - [x] Text
   - [ ] Number
   - [ ] Password with reveal icon
   - [ ] Textarea with counter
