@@ -20,7 +20,7 @@ export function Text({
     <input
       type="text"
       id={id}
-      className={cx(styles.textInput, {})}
+      className={cx(styles.textInput, styles.fontRegular, {})}
       {...props}
     />
   );

@@ -1,16 +1,11 @@
 @import "../config/colors";
 @import "../config/backgrounds";
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+@import "../config/fonts";
 
 .textInput{
-  font-family: "Quicksand","Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  width: 342px;
   height: 48px;
   border-radius: 12px;
   padding: 0px 16px;
-  font-weight: 500;
   appearance: none;
   cursor: pointer;
   &:placeholder-shown{
