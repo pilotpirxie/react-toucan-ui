@@ -24,4 +24,10 @@
       color:$color-disabled;
     }
   }
+  &:not(.fullWidth){
+    max-width: 250px;
+  }
+}
+.fullWidth{
+  width: 100%;
 }
