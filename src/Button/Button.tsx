@@ -47,24 +47,27 @@ export function Button({
   return (
     <button
       type="button"
-      className={cx({
-        [styles.backgroundPrimary]: color === 'primary',
-        [styles.backgroundSecondary]: color === 'secondary',
-        [styles.backgroundTertiary]: color === 'tertiary',
-        [styles.backgroundSuccess]: color === 'success',
-        [styles.backgroundInfo]: color === 'info',
-        [styles.backgroundWarning]: color === 'warning',
-        [styles.backgroundDanger]: color === 'danger',
-        [styles.backgroundLight]: color === 'light',
-        [styles.backgroundDark]: color === 'dark',
+      className={cx(
+        styles.fontRegular,
+        {
+          [styles.backgroundPrimary]: color === 'primary',
+          [styles.backgroundSecondary]: color === 'secondary',
+          [styles.backgroundTertiary]: color === 'tertiary',
+          [styles.backgroundSuccess]: color === 'success',
+          [styles.backgroundInfo]: color === 'info',
+          [styles.backgroundWarning]: color === 'warning',
+          [styles.backgroundDanger]: color === 'danger',
+          [styles.backgroundLight]: color === 'light',
+          [styles.backgroundDark]: color === 'dark',
 
-        [styles.sizeSmall]: size === 'small',
-        [styles.sizeMedium]: size === 'medium',
-        [styles.sizeLarge]: size === 'large',
+          [styles.sizeSmall]: size === 'small',
+          [styles.sizeMedium]: size === 'medium',
+          [styles.sizeLarge]: size === 'large',
 
-        [styles.outlined]: style === 'outlined',
-        [styles.link]: style === 'link',
-      })}
+          [styles.outlined]: style === 'outlined',
+          [styles.link]: style === 'link',
+        },
+      )}
       {...props}
     >
       {children}
