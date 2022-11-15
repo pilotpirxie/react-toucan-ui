@@ -63,7 +63,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "css-loader": "^6.7.1",
-    "iconoir": "^5.3.2"
+    "iconoir-react": "^5.4.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
