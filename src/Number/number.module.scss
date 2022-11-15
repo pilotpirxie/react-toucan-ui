@@ -9,7 +9,24 @@
   border: none;
   height: 100%;
 }
+.controlButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  & button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 14px;
+  }
+}
 .textInput{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
   height: 48px;
   border-radius: 12px;
   padding: 0px 16px;

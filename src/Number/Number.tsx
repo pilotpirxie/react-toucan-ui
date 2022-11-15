@@ -1,6 +1,5 @@
 import cx from 'classnames';
 import React, { useRef } from 'react';
-import { Button } from '../Button';
 import styles from './number.module.scss';
 
 export type NumberProps = {
@@ -54,16 +53,18 @@ export function Number({
         disabled={disabled}
         ref={inputRef}
       />
-      <Button buttonStyle="outlined" onClick={() => { inputRef.current!.stepUp(); }} color="dark">
-        <svg width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
-          <path d="M6 15l6-6 6 6" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </Button>
-      <Button buttonStyle="outlined" onClick={() => { inputRef.current!.stepDown(); }} color="dark">
-        <svg width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
-          <path d="M6 9l6 6 6-6" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </Button>
+      <div className={cx(styles.controlButtons)}>
+        <button type="button" onClick={() => { inputRef.current!.stepUp(); }}>
+          <svg width="14px" height="14px" strokeWidth="2.5" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+            <path d="M6 15l6-6 6 6" stroke="#000000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        <button type="button" onClick={() => { inputRef.current!.stepDown(); }}>
+          <svg width="14px" height="14px" strokeWidth="2.5" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+            <path d="M6 9l6 6 6-6" stroke="#000000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }
