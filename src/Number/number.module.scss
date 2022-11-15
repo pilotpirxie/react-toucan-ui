@@ -9,6 +9,9 @@
   border: none;
   background: transparent;
   height: 100%;
+  &:focus{
+    outline: none;
+  }
 }
 .controlButtons{
   display: flex;
@@ -41,6 +44,11 @@
   &:not(:placeholder-shown){
     color:$color-dark;
     border: 1px solid $color-dark;
+  }
+  &:not(:hover){
+    & .controlButtons{
+      visibility: hidden;
+    }
   }
   &:focus{
     outline:none;
