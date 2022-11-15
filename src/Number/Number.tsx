@@ -1,5 +1,6 @@
 import cx from 'classnames';
 import React, { useRef } from 'react';
+import { NavArrowUp, NavArrowDown } from 'iconoir-react';
 import styles from './number.module.scss';
 
 export type NumberProps = {
@@ -54,15 +55,11 @@ export function Number({
         ref={inputRef}
       />
       <div className={cx(styles.controlButtons)}>
-        <button type="button" onClick={() => { inputRef.current!.stepUp(); }}>
-          <svg width="14px" height="14px" strokeWidth="2.5" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
-            <path d="M6 15l6-6 6 6" stroke="#000000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        <button type="button" onClick={() => { inputRef.current!.stepUp(); }} className={cx(styles.backgroundDark, styles.outlined)}>
+          <NavArrowUp strokeWidth={2.5} />
         </button>
-        <button type="button" onClick={() => { inputRef.current!.stepDown(); }}>
-          <svg width="14px" height="14px" strokeWidth="2.5" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
-            <path d="M6 9l6 6 6-6" stroke="#000000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        <button type="button" onClick={() => { inputRef.current!.stepDown(); }} className={cx(styles.backgroundDark, styles.outlined)}>
+          <NavArrowDown strokeWidth={2.5} />
         </button>
       </div>
     </div>
