@@ -26,3 +26,8 @@ fullWidth.args = {
   focusedPlaceholder: 'Thou shall write texts longer than humanity had ever imagined...',
   fullWidth: true,
 };
+export const Disabled = Template.bind({});
+Disabled.args = {
+  placeholder: 'This input is disabled.',
+  disabled: true,
+};

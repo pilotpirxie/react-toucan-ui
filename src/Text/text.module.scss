@@ -27,6 +27,11 @@
   &:not(.fullWidth){
     max-width: 250px;
   }
+  &:disabled{
+    background-color: lighten($color-disabled,15%);
+    border: 1px solid $color-secondary;
+    color: $color-secondary;
+  }
 }
 .fullWidth{
   width: 100%;

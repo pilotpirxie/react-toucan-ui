@@ -19,6 +19,10 @@ export type TextProps = {
    * Optional placeholder which will be displayed after input focus event.
    */
   focusedPlaceholder?:string;
+  /**
+   * Should input be disabled?
+   */
+  disabled?:boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
@@ -28,6 +32,7 @@ export function Text({
   id,
   fullWidth = false,
   focusedPlaceholder = 'Type something...',
+  disabled = false,
   ...props
 }: TextProps) {
   const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Text';
@@ -41,6 +46,7 @@ export function Text({
       onFocus={(e) => { e.currentTarget.placeholder = focusedPlaceholder; }}
       onBlur={(e) => { e.currentTarget.placeholder = placeholder; }}
       {...props}
+      disabled={disabled}
     />
   );
 }
