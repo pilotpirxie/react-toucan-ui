@@ -31,11 +31,11 @@ export type TextProps = {
 export function Text({
   id,
   fullWidth = false,
-  focusedPlaceholder = 'Type something...',
   disabled = false,
   ...props
 }: TextProps) {
   const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Text';
+  const focusedPlaceholder = typeof props.focusedPlaceholder !== 'undefined' ? props.focusedPlaceholder : placeholder;
   return (
     <input
       type="text"

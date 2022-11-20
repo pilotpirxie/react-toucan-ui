@@ -32,12 +32,12 @@ export type NumberProps = {
 export function Number({
   id,
   fullWidth = false,
-  focusedPlaceholder = 'Type something...',
   disabled = false,
   ...props
 }: NumberProps) {
   const inputRef = useRef<any>(null);
   const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Number';
+  const focusedPlaceholder = typeof props.focusedPlaceholder !== 'undefined' ? props.focusedPlaceholder : placeholder;
   return (
     <div
       className={cx(styles.textInput, styles.fontRegular, {
