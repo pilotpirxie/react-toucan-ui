@@ -23,7 +23,7 @@ export type ButtonProps = {
   /**
    * Should button have regular look, be outlined or serve as a link?
    */
-  buttonStyle?: 'standard' | 'outlined' | 'link';
+  styling?: 'standard' | 'outlined' | 'link';
   /**
    * Button contents
    */
@@ -40,7 +40,7 @@ export type ButtonProps = {
 export function Button({
   size = 'medium',
   color = 'primary',
-  buttonStyle = 'standard',
+  styling = 'standard',
   children,
   ...props
 }: ButtonProps) {
@@ -64,8 +64,8 @@ export function Button({
           [styles.sizeMedium]: size === 'medium',
           [styles.sizeLarge]: size === 'large',
 
-          [styles.outlined]: buttonStyle === 'outlined',
-          [styles.link]: buttonStyle === 'link',
+          [styles.outlined]: styling === 'outlined',
+          [styles.link]: styling === 'link',
         },
       )}
       {...props}
