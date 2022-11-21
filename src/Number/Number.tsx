@@ -42,6 +42,7 @@ export function Number({
     <div
       className={cx(styles.textInput, styles.fontRegular, {
         [styles.fullWidth]: fullWidth,
+        [styles.disabled]: disabled,
       })}
     >
       <input
@@ -54,7 +55,10 @@ export function Number({
         disabled={disabled}
         ref={inputRef}
       />
-      <div className={cx(styles.controlButtons)}>
+      <div className={cx(styles.controlButtons, {
+        [styles.hidden]: disabled,
+      })}
+      >
         <button type="button" onClick={() => { inputRef.current!.stepUp(); }} className={cx(styles.backgroundDark, styles.outlined)}>
           <NavArrowUp strokeWidth={2.5} />
         </button>
