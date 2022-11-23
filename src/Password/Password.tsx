@@ -40,7 +40,13 @@ export function Password({
   isShown = false,
   ...props
 }: PasswordProps) {
+  enum inputState {
+    inactive = 0,
+    active = 1,
+    filled = 2
+  }
   const inputRef = useRef<HTMLInputElement>(null);
+  const [inputStatus, setInputStatus] = useState<inputState>(inputState.inactive);
   const [show, setShow] = useState(isShown || false);
   const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Password';
   const focusedPlaceholder = props.focusedPlaceholder || placeholder;
@@ -49,14 +55,28 @@ export function Password({
       className={cx(styles.textInput, styles.fontRegular, {
         [styles.fullWidth]: fullWidth,
         [styles.disabled]: disabled,
+        [styles.placeholderShown]: inputStatus === inputState.inactive,
+        [styles.borderActive]: inputStatus === inputState.active
+         || inputStatus === inputState.filled,
+        [styles.textDark]: inputStatus === inputState.filled,
       })}
     >
       <input
         type={show ? 'text' : 'password'}
         id={id}
         className={cx(styles.styleNone, styles.fontRegular)}
-        onFocus={(e) => { e.currentTarget.placeholder = focusedPlaceholder; }}
-        onBlur={(e) => { e.currentTarget.placeholder = placeholder; }}
+        onFocus={(e) => {
+          e.currentTarget.placeholder = focusedPlaceholder;
+          setInputStatus(inputState.active);
+        }}
+        onBlur={(e) => {
+          e.currentTarget.placeholder = placeholder;
+          if (e.currentTarget.value.length === 0) {
+            setInputStatus(inputState.inactive);
+          } else {
+            setInputStatus(inputState.filled);
+          }
+        }}
         {...props}
         disabled={disabled}
         ref={inputRef}
