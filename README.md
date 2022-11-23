@@ -24,7 +24,7 @@ React components for beautiful UI
   - [x] Radio
   - [x] Range slider
   - [x] Text
-  - [ ] Number
+  - [x] Number
   - [ ] Password with reveal icon
   - [ ] Textarea with counter
   - [ ] Color picker
