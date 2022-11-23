@@ -37,7 +37,7 @@ export function Number({
 }: NumberProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Number';
-  const focusedPlaceholder = typeof props.focusedPlaceholder !== 'undefined' ? props.focusedPlaceholder : placeholder;
+  const focusedPlaceholder = props.focusedPlaceholder || placeholder;
   return (
     <div
       className={cx(styles.textInput, styles.fontRegular, {

@@ -35,7 +35,7 @@ export function Text({
   ...props
 }: TextProps) {
   const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Text';
-  const focusedPlaceholder = typeof props.focusedPlaceholder !== 'undefined' ? props.focusedPlaceholder : placeholder;
+  const focusedPlaceholder = props.focusedPlaceholder || placeholder;
   return (
     <input
       type="text"
