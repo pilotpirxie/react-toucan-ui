@@ -25,7 +25,7 @@ React components for beautiful UI
   - [x] Range slider
   - [x] Text
   - [x] Number
-  - [ ] Password with reveal icon
+  - [x] Password with reveal icon
   - [ ] Textarea with counter
   - [ ] Color picker
   - [ ] Color palette
