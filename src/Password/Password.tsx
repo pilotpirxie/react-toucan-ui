@@ -64,7 +64,11 @@ export function Password({
       <input
         type={show ? 'text' : 'password'}
         id={id}
-        className={cx(styles.styleNone, styles.fontRegular)}
+        className={cx(
+          styles.styleNone,
+          styles.fontRegular,
+          { [styles.placeholderDisabled]: inputStatus === inputState.active },
+        )}
         onFocus={(e) => {
           e.currentTarget.placeholder = focusedPlaceholder;
           if (e.currentTarget.value.length === 0) {
