@@ -67,12 +67,23 @@ export function Password({
         className={cx(styles.styleNone, styles.fontRegular)}
         onFocus={(e) => {
           e.currentTarget.placeholder = focusedPlaceholder;
-          setInputStatus(inputState.active);
+          if (e.currentTarget.value.length === 0) {
+            setInputStatus(inputState.active);
+          } else {
+            setInputStatus(inputState.filled);
+          }
         }}
         onBlur={(e) => {
           e.currentTarget.placeholder = placeholder;
           if (e.currentTarget.value.length === 0) {
             setInputStatus(inputState.inactive);
+          } else {
+            setInputStatus(inputState.filled);
+          }
+        }}
+        onChange={(e) => {
+          if (e.currentTarget.value.length === 0) {
+            setInputStatus(inputState.active);
           } else {
             setInputStatus(inputState.filled);
           }
