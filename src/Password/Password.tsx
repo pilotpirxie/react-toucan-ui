@@ -41,9 +41,9 @@ export function Password({
   ...props
 }: PasswordProps) {
   enum inputState {
-    inactive = 0,
-    active = 1,
-    filled = 2
+    inactive,
+    active,
+    filled
   }
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputStatus, setInputStatus] = useState<inputState>(inputState.inactive);
@@ -60,6 +60,7 @@ export function Password({
          || inputStatus === inputState.filled,
         [styles.textDark]: inputStatus === inputState.filled,
       })}
+      onClick={() => inputRef.current!.focus()}
     >
       <input
         type={show ? 'text' : 'password'}
@@ -102,8 +103,24 @@ export function Password({
       >
         {
            show
-             ? <EyeEmpty onClick={() => { setShow(!show); }} />
-             : <EyeOff onClick={() => { setShow(!show); }} />
+             ? (
+               <EyeEmpty
+                 onClick={(e) => {
+                   e.stopPropagation();
+                   setShow(!show);
+                 }}
+                 style={{ cursor: 'pointer' }}
+               />
+             )
+             : (
+               <EyeOff
+                 onClick={(e) => {
+                   e.stopPropagation();
+                   setShow(!show);
+                 }}
+                 style={{ cursor: 'pointer' }}
+               />
+             )
           }
       </div>
     </div>

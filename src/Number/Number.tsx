@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { NavArrowUp, NavArrowDown } from 'iconoir-react';
 import styles from './number.module.scss';
 
@@ -35,7 +35,13 @@ export function Number({
   disabled = false,
   ...props
 }: NumberProps) {
+  enum inputState {
+    inactive,
+    active,
+    filled
+  }
   const inputRef = useRef<HTMLInputElement>(null);
+  const [inputStatus, setInputStatus] = useState<inputState>(inputState.inactive);
   const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Number';
   const focusedPlaceholder = props.focusedPlaceholder || placeholder;
   return (
@@ -43,14 +49,44 @@ export function Number({
       className={cx(styles.textInput, styles.fontRegular, {
         [styles.fullWidth]: fullWidth,
         [styles.disabled]: disabled,
+        [styles.placeholderShown]: inputStatus === inputState.inactive,
+        [styles.borderActive]: inputStatus === inputState.active
+         || inputStatus === inputState.filled,
+        [styles.textDark]: inputStatus === inputState.filled,
       })}
+      onClick={() => { inputRef.current!.focus(); }}
     >
       <input
         type="number"
         id={id}
-        className={cx(styles.styleNone, styles.fontRegular)}
-        onFocus={(e) => { e.currentTarget.placeholder = focusedPlaceholder; }}
-        onBlur={(e) => { e.currentTarget.placeholder = placeholder; }}
+        className={cx(
+          styles.styleNone,
+          styles.fontRegular,
+          { [styles.placeholderDisabled]: inputStatus === inputState.active },
+        )}
+        onFocus={(e) => {
+          e.currentTarget.placeholder = focusedPlaceholder;
+          if (e.currentTarget.value.length === 0) {
+            setInputStatus(inputState.active);
+          } else {
+            setInputStatus(inputState.filled);
+          }
+        }}
+        onBlur={(e) => {
+          e.currentTarget.placeholder = placeholder;
+          if (e.currentTarget.value.length === 0) {
+            setInputStatus(inputState.inactive);
+          } else {
+            setInputStatus(inputState.filled);
+          }
+        }}
+        onChange={(e) => {
+          if (e.currentTarget.value.length === 0) {
+            setInputStatus(inputState.active);
+          } else {
+            setInputStatus(inputState.filled);
+          }
+        }}
         {...props}
         disabled={disabled}
         ref={inputRef}
@@ -59,10 +95,26 @@ export function Number({
         [styles.hidden]: disabled,
       })}
       >
-        <button type="button" onClick={() => { inputRef.current!.stepUp(); }} className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            inputRef.current!.stepUp();
+            setInputStatus(inputState.filled);
+          }}
+          className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
+        >
           <NavArrowUp strokeWidth={2.5} />
         </button>
-        <button type="button" onClick={() => { inputRef.current!.stepDown(); }} className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            inputRef.current!.stepDown();
+            setInputStatus(inputState.filled);
+          }}
+          className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
+        >
           <NavArrowDown strokeWidth={2.5} />
         </button>
       </div>

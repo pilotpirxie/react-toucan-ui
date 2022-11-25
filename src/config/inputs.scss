@@ -1,0 +1,13 @@
+.placeholderShown{
+  color:$color-secondary;
+  border: 1px solid $color-secondary;  
+}
+.borderActive{
+  border: 1px solid $color-dark;  
+}
+.textDark{
+  color:$color-dark;
+}
+.placeholderDisabled::placeholder{
+  color:$color-disabled;
+}
