@@ -19,9 +19,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 14px;
+    padding: 0 2px;
     border-radius: 4px;
+    &:first-child{
+      margin-bottom: 4px;
+    }
   }
 }
 .textInput{
@@ -30,9 +32,8 @@
   overflow: hidden;
   justify-content: space-between;
   align-items: center;
-  height: 48px;
-  border-radius: 12px;
-  padding: 0px 16px;
+  border-radius: 10px;
+  padding: 6px 8px;
   appearance: none;
   cursor: text;
   &:not(.fullWidth){
