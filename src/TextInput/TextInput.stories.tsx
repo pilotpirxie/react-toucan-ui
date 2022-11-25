@@ -1,28 +1,28 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Password } from './Password';
+import { TextInput } from './TextInput';
 
 export default {
-  title: 'Form/Password',
-  component: Password,
+  title: 'Form/TextInput',
+  component: TextInput,
   argTypes: {},
-} as ComponentMeta<typeof Password>;
+} as ComponentMeta<typeof TextInput>;
 
-const Template: ComponentStory<typeof Password> = (args) => <Password {...args} />;
+const Template: ComponentStory<typeof TextInput> = (args) => <TextInput {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = {
-  placeholder: 'Password',
+  placeholder: 'Text',
 };
 export const focusedPlaceholder = Template.bind({});
 focusedPlaceholder.args = {
-  placeholder: 'Password',
+  placeholder: 'Text',
   focusedPlaceholder: 'I can be anything you want...',
 };
 export const fullWidth = Template.bind({});
 fullWidth.args = {
-  placeholder: 'Password',
+  placeholder: 'Text',
   focusedPlaceholder: 'Thou shall write texts longer than humanity had ever imagined...',
   fullWidth: true,
 };

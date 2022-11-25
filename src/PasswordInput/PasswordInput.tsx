@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import React, { useRef, useState } from 'react';
-import { NavArrowUp, NavArrowDown } from 'iconoir-react';
-import styles from './number.module.scss';
+import { EyeEmpty, EyeOff } from 'iconoir-react';
+import styles from './passwordInput.module.scss';
 
-export type NumberProps = {
+export type PasswordInputProps = {
   /**
    * ID of input, optional
    */
@@ -25,21 +25,26 @@ export type NumberProps = {
    */
   disabled?:boolean;
   /**
+   * Should password be visible?
+   */
+  isShown?:boolean;
+  /**
    * Control buttons visible only when input hovered?
    */
   showButtonsOnHover?:boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
- * Number component
+ * PasswordInput component
  */
-export function Number({
+export function PasswordInput({
   id,
   fullWidth = false,
   disabled = false,
+  isShown = false,
   showButtonsOnHover = false,
   ...props
-}: NumberProps) {
+}: PasswordInputProps) {
   enum inputState {
     inactive,
     active,
@@ -47,7 +52,8 @@ export function Number({
   }
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputStatus, setInputStatus] = useState<inputState>(inputState.inactive);
-  const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Number';
+  const [show, setShow] = useState(isShown || false);
+  const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'PasswordInput';
   const focusedPlaceholder = props.focusedPlaceholder || placeholder;
   return (
     <div
@@ -60,15 +66,14 @@ export function Number({
          || inputStatus === inputState.filled,
         [styles.textDark]: inputStatus === inputState.filled,
       })}
-      onClick={() => { inputRef.current!.focus(); }}
+      onClick={() => inputRef.current!.focus()}
     >
       <input
-        type="number"
+        type={show ? 'text' : 'password'}
         id={id}
         className={cx(
           styles.styleNone,
           styles.fontRegular,
-          styles.hideSpinnerArrows,
           { [styles.placeholderDisabled]: inputStatus === inputState.active },
         )}
         onFocus={(e) => {
@@ -102,28 +107,27 @@ export function Number({
         [styles.hidden]: disabled,
       })}
       >
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            inputRef.current!.stepUp();
-            setInputStatus(inputState.filled);
-          }}
-          className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
-        >
-          <NavArrowUp strokeWidth={2.5} />
-        </button>
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            inputRef.current!.stepDown();
-            setInputStatus(inputState.filled);
-          }}
-          className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
-        >
-          <NavArrowDown strokeWidth={2.5} />
-        </button>
+        {
+           show
+             ? (
+               <EyeEmpty
+                 onClick={(e) => {
+                   e.stopPropagation();
+                   setShow(!show);
+                 }}
+                 style={{ cursor: 'pointer' }}
+               />
+             )
+             : (
+               <EyeOff
+                 onClick={(e) => {
+                   e.stopPropagation();
+                   setShow(!show);
+                 }}
+                 style={{ cursor: 'pointer' }}
+               />
+             )
+          }
       </div>
     </div>
   );

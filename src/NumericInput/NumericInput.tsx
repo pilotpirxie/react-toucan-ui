@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import React, { useRef, useState } from 'react';
-import { EyeEmpty, EyeOff } from 'iconoir-react';
-import styles from './password.module.scss';
+import { NavArrowUp, NavArrowDown } from 'iconoir-react';
+import styles from './numericInput.module.scss';
 
-export type PasswordProps = {
+export type NumericInputProps = {
   /**
    * ID of input, optional
    */
@@ -25,26 +25,21 @@ export type PasswordProps = {
    */
   disabled?:boolean;
   /**
-   * Should password be visible?
-   */
-  isShown?:boolean;
-  /**
    * Control buttons visible only when input hovered?
    */
   showButtonsOnHover?:boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
- * Password component
+ * NumericInput component
  */
-export function Password({
+export function NumericInput({
   id,
   fullWidth = false,
   disabled = false,
-  isShown = false,
   showButtonsOnHover = false,
   ...props
-}: PasswordProps) {
+}: NumericInputProps) {
   enum inputState {
     inactive,
     active,
@@ -52,8 +47,7 @@ export function Password({
   }
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputStatus, setInputStatus] = useState<inputState>(inputState.inactive);
-  const [show, setShow] = useState(isShown || false);
-  const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Password';
+  const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'NumericInput';
   const focusedPlaceholder = props.focusedPlaceholder || placeholder;
   return (
     <div
@@ -66,14 +60,15 @@ export function Password({
          || inputStatus === inputState.filled,
         [styles.textDark]: inputStatus === inputState.filled,
       })}
-      onClick={() => inputRef.current!.focus()}
+      onClick={() => { inputRef.current!.focus(); }}
     >
       <input
-        type={show ? 'text' : 'password'}
+        type="number"
         id={id}
         className={cx(
           styles.styleNone,
           styles.fontRegular,
+          styles.hideSpinnerArrows,
           { [styles.placeholderDisabled]: inputStatus === inputState.active },
         )}
         onFocus={(e) => {
@@ -107,27 +102,28 @@ export function Password({
         [styles.hidden]: disabled,
       })}
       >
-        {
-           show
-             ? (
-               <EyeEmpty
-                 onClick={(e) => {
-                   e.stopPropagation();
-                   setShow(!show);
-                 }}
-                 style={{ cursor: 'pointer' }}
-               />
-             )
-             : (
-               <EyeOff
-                 onClick={(e) => {
-                   e.stopPropagation();
-                   setShow(!show);
-                 }}
-                 style={{ cursor: 'pointer' }}
-               />
-             )
-          }
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            inputRef.current!.stepUp();
+            setInputStatus(inputState.filled);
+          }}
+          className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
+        >
+          <NavArrowUp strokeWidth={2.5} />
+        </button>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            inputRef.current!.stepDown();
+            setInputStatus(inputState.filled);
+          }}
+          className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
+        >
+          <NavArrowDown strokeWidth={2.5} />
+        </button>
       </div>
     </div>
   );

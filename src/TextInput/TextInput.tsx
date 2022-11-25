@@ -1,8 +1,8 @@
 import cx from 'classnames';
 import React, { useState } from 'react';
-import styles from './text.module.scss';
+import styles from './textInput.module.scss';
 
-export type TextProps = {
+export type TextInputProps = {
   /**
    * ID of input, optional
    */
@@ -26,21 +26,21 @@ export type TextProps = {
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
- * Text component
+ * TextInput component
  */
-export function Text({
+export function TextInput({
   id,
   fullWidth = false,
   disabled = false,
   ...props
-}: TextProps) {
+}: TextInputProps) {
   enum inputState {
     inactive,
     active,
     filled
   }
   const [inputStatus, setInputStatus] = useState<inputState>(inputState.inactive);
-  const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'Text';
+  const placeholder = typeof props.placeholder !== 'undefined' ? props.placeholder : 'TextInput';
   const focusedPlaceholder = props.focusedPlaceholder || placeholder;
   return (
     <input
