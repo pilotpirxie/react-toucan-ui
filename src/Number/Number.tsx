@@ -24,6 +24,10 @@ export type NumberProps = {
    * Should input be disabled?
    */
   disabled?:boolean;
+  /**
+   * Control buttons visible only when input hovered?
+   */
+  showButtonsOnHover?:boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
@@ -33,6 +37,7 @@ export function Number({
   id,
   fullWidth = false,
   disabled = false,
+  showButtonsOnHover = false,
   ...props
 }: NumberProps) {
   enum inputState {
@@ -49,6 +54,7 @@ export function Number({
       className={cx(styles.textInput, styles.fontRegular, {
         [styles.fullWidth]: fullWidth,
         [styles.disabled]: disabled,
+        [styles.showButtonsOnHover]: showButtonsOnHover,
         [styles.placeholderShown]: inputStatus === inputState.inactive,
         [styles.borderActive]: inputStatus === inputState.active
          || inputStatus === inputState.filled,

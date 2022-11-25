@@ -28,6 +28,10 @@ export type PasswordProps = {
    * Should password be visible?
    */
   isShown?:boolean;
+  /**
+   * Control buttons visible only when input hovered?
+   */
+  showButtonsOnHover?:boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
@@ -38,6 +42,7 @@ export function Password({
   fullWidth = false,
   disabled = false,
   isShown = false,
+  showButtonsOnHover = false,
   ...props
 }: PasswordProps) {
   enum inputState {
@@ -55,6 +60,7 @@ export function Password({
       className={cx(styles.textInput, styles.fontRegular, {
         [styles.fullWidth]: fullWidth,
         [styles.disabled]: disabled,
+        [styles.showButtonsOnHover]: showButtonsOnHover,
         [styles.placeholderShown]: inputStatus === inputState.inactive,
         [styles.borderActive]: inputStatus === inputState.active
          || inputStatus === inputState.filled,

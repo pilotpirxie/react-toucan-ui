@@ -35,13 +35,20 @@
   padding: 0px 16px;
   appearance: none;
   cursor: text;
-  &:not(:hover){
-    & .controlButtons{
-      visibility: hidden;
-    }
-  }
   &:not(.fullWidth){
     max-width: 250px;
+  }
+}
+.showButtonsOnHover{
+  &:hover{
+    & .controlButtons{
+      visibility: visible;
+    }
+  }
+  &:not(:hover){
+    & .controlButtons{ 
+      visibility: hidden;
+    }
   }
 }
 .disabled{
