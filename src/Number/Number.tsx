@@ -62,6 +62,7 @@ export function Number({
         className={cx(
           styles.styleNone,
           styles.fontRegular,
+          styles.hideSpinnerArrows,
           { [styles.placeholderDisabled]: inputStatus === inputState.active },
         )}
         onFocus={(e) => {
