@@ -99,3 +99,6 @@
 .backgroundDark {
   @include background($color-dark, white);
 }
+.outlineThin{
+  outline-width: 1px !important;
+}

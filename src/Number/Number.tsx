@@ -59,10 +59,10 @@ export function Number({
         [styles.hidden]: disabled,
       })}
       >
-        <button type="button" onClick={() => { inputRef.current!.stepUp(); }} className={cx(styles.backgroundDark, styles.outlined)}>
+        <button type="button" onClick={() => { inputRef.current!.stepUp(); }} className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}>
           <NavArrowUp strokeWidth={2.5} />
         </button>
-        <button type="button" onClick={() => { inputRef.current!.stepDown(); }} className={cx(styles.backgroundDark, styles.outlined)}>
+        <button type="button" onClick={() => { inputRef.current!.stepDown(); }} className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}>
           <NavArrowDown strokeWidth={2.5} />
         </button>
       </div>
