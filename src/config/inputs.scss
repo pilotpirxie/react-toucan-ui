@@ -1,3 +1,57 @@
+@import "./colors.scss";
+.styleNone{
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border: none;
+  background: transparent;
+  height: 100%;
+  &:focus{
+    outline: none;
+  }
+}
+.controlButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  & button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 14px;
+    border-radius: 4px;
+  }
+}
+.textInput{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  border-radius: 12px;
+  padding: 0px 16px;
+  appearance: none;
+  cursor: text;
+  &:not(:hover){
+    & .controlButtons{
+      visibility: hidden;
+    }
+  }
+  &:not(.fullWidth){
+    max-width: 250px;
+  }
+}
+.disabled{
+    background-color: lighten($color-disabled,15%);
+    border: 1px solid $color-secondary;
+    color: $color-secondary;
+}
+.hidden{
+  visibility: hidden;
+}
 .placeholderShown{
   color:$color-secondary;
   border: 1px solid $color-secondary;  
@@ -10,4 +64,10 @@
 }
 .placeholderDisabled::placeholder{
   color:$color-disabled;
+}
+.placeholderRegular::placeholder{
+  color:$color-dark;
+}
+.fullWidth{
+  width: 100%;
 }
