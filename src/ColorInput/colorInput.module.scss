@@ -5,12 +5,14 @@
 
 .textInput{
     padding: 0;
+    cursor: default;
 }
 .controlButtons{
     align-items: center;
     background-color: white;
     flex-grow:1;
     padding: 4px 1px 4px 0;
+    max-width: 60px;
 }
 .hidden{
     flex-grow: 5;

@@ -15,15 +15,9 @@ export const Basic = Template.bind({});
 Basic.args = {
   placeholder: 'Color',
 };
-export const focusedPlaceholder = Template.bind({});
-focusedPlaceholder.args = {
-  placeholder: 'Color',
-  focusedPlaceholder: 'I can be anything you want...',
-};
 export const fullWidth = Template.bind({});
 fullWidth.args = {
   placeholder: 'Color',
-  focusedPlaceholder: 'Thou shall write texts longer than humanity had ever imagined...',
   fullWidth: true,
 };
 export const Disabled = Template.bind({});
