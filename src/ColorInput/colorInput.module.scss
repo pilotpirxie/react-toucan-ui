@@ -2,3 +2,24 @@
 @import "../config/backgrounds";
 @import "../config/fonts";
 @import "../config/inputs";
+
+.textInput{
+    padding: 0;
+}
+.controlButtons{
+    align-items: center;
+    background-color: white;
+    flex-grow:1;
+    padding: 4px 1px 4px 0;
+}
+.hidden{
+    flex-grow: 5;
+}
+.buttonBorder{
+    border-radius: 0 10px 10px 0;
+    border: 1px solid $color-secondary;
+    border-left: 0px;
+}
+.innerBorder{
+    box-shadow: 0 0 0 1px $color-secondary inset;
+}

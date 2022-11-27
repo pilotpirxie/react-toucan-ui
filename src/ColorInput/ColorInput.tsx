@@ -34,9 +34,8 @@ export function ColorInput({
       className={cx(
         styles.textInput,
         styles.fontRegular,
-        styles.placeholderShown,
-        styles.borderActive,
         {
+          [styles.innerBorder]: color.toUpperCase() === '#FFFFFF',
           [styles.fullWidth]: fullWidth,
           [styles.disabled]: disabled,
         },
@@ -56,14 +55,10 @@ export function ColorInput({
         disabled={disabled}
         ref={inputRef}
       />
-      <div className={cx(styles.controlButtons, {
-        [styles.hidden]: disabled,
+      <div className={cx(styles.controlButtons, styles.buttonBorder, {
       })}
       >
         <ColorPickerEmpty
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
           className={cx(styles.textDark)}
         />
       </div>
