@@ -111,6 +111,8 @@ export function PasswordInput({
            show
              ? (
                <EyeEmpty
+                 width={20}
+                 height={20}
                  onClick={(e) => {
                    e.stopPropagation();
                    setShow(!show);
@@ -121,6 +123,8 @@ export function PasswordInput({
              )
              : (
                <EyeOff
+                 width={20}
+                 height={20}
                  onClick={(e) => {
                    e.stopPropagation();
                    setShow(!show);
