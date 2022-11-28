@@ -99,7 +99,10 @@ export function TextArea({
         styles.fullWidth,
         styles.lengthIndicator,
         styles.fontRegular,
-        styles.textSecondary,
+        {
+          [styles.textDark]: content.length > 0,
+          [styles.textSecondary]: content.length === 0,
+        },
       )}
       >
         {disabled ? '-' : content.length}
