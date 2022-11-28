@@ -6,3 +6,4 @@ export * from './Range';
 export * from './TextInput';
 export * from './NumericInput';
 export * from './PasswordInput';
+export * from './ColorInput';

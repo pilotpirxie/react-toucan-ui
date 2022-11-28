@@ -27,7 +27,7 @@ React components for beautiful UI
   - [x] Number
   - [x] Password with reveal icon
   - [ ] Textarea with counter
-  - [ ] Color picker
+  - [x] Color picker
   - [ ] Color palette
   - [ ] Tag Input
   - [ ] Rating
