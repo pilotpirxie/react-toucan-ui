@@ -29,6 +29,10 @@ export type ButtonProps = {
    */
   children: React.ReactNode | string;
   /**
+   * Should Button fill whole available width?
+   */
+  fullWidth?: boolean;
+  /**
    * Disabled state
    */
   disabled?: boolean;
@@ -41,6 +45,7 @@ export function Button({
   size = 'medium',
   color = 'primary',
   styling = 'standard',
+  fullWidth = false,
   children,
   ...props
 }: ButtonProps) {
@@ -66,6 +71,8 @@ export function Button({
 
           [styles.outlined]: styling === 'outlined',
           [styles.link]: styling === 'link',
+
+          [styles.fullWidth]: fullWidth,
         },
       )}
       {...props}
