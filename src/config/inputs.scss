@@ -70,6 +70,9 @@
 .textDark{
   color:$color-dark;
 }
+.textSecondary{
+  color:$color-secondary;
+}
 .placeholderDisabled::placeholder{
   color:$color-disabled;
 }
