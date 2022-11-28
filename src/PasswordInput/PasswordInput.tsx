@@ -116,6 +116,7 @@ export function PasswordInput({
                    setShow(!show);
                  }}
                  style={{ cursor: 'pointer' }}
+                 className={cx({ [styles.hidden]: inputStatus !== inputState.filled })}
                />
              )
              : (
@@ -125,6 +126,7 @@ export function PasswordInput({
                    setShow(!show);
                  }}
                  style={{ cursor: 'pointer' }}
+                 className={cx({ [styles.hidden]: inputStatus !== inputState.filled })}
                />
              )
           }
