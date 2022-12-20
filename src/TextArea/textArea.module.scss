@@ -1,0 +1,23 @@
+@import "../config/colors";
+@import "../config/backgrounds";
+@import "../config/fonts";
+@import "../config/inputs";
+
+.textInput{
+    resize:none;
+    box-sizing: border-box;
+}
+.lengthIndicator{
+    display: flex;
+    flex-direction: row-reverse;
+    @include font(400,13px)
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    &:not(.fullWidth){
+        max-width: 250px;
+    }
+}

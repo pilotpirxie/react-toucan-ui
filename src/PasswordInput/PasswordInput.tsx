@@ -111,20 +111,26 @@ export function PasswordInput({
            show
              ? (
                <EyeEmpty
+                 width={20}
+                 height={20}
                  onClick={(e) => {
                    e.stopPropagation();
                    setShow(!show);
                  }}
                  style={{ cursor: 'pointer' }}
+                 className={cx({ [styles.hidden]: inputStatus !== inputState.filled })}
                />
              )
              : (
                <EyeOff
+                 width={20}
+                 height={20}
                  onClick={(e) => {
                    e.stopPropagation();
                    setShow(!show);
                  }}
                  style={{ cursor: 'pointer' }}
+                 className={cx({ [styles.hidden]: inputStatus !== inputState.filled })}
                />
              )
           }

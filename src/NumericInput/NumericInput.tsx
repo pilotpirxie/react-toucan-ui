@@ -111,7 +111,7 @@ export function NumericInput({
           }}
           className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
         >
-          <NavArrowUp strokeWidth={3} width={20} height={14} />
+          <NavArrowUp strokeWidth={5} width={10} height={8} />
         </button>
         <button
           type="button"
@@ -122,7 +122,7 @@ export function NumericInput({
           }}
           className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
         >
-          <NavArrowDown strokeWidth={3} width={20} height={14} />
+          <NavArrowDown strokeWidth={5} width={10} height={8} />
         </button>
       </div>
     </div>

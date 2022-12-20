@@ -4,6 +4,7 @@
   -moz-appearance: textfield;
   appearance: textfield;
   border: none;
+  padding: 0;
   background: transparent;
   height: 100%;
   &:focus{
@@ -20,7 +21,7 @@
     justify-content: center;
     align-items: center;
     padding: 0 2px;
-    border-radius: 4px;
+    border-radius: 3px;
     &:first-child{
       margin-bottom: 4px;
     }
@@ -35,6 +36,7 @@
   border-radius: 10px;
   padding: 6px 8px;
   appearance: none;
+  box-sizing: border-box;
   cursor: text;
   &:not(.fullWidth){
     max-width: 250px;
@@ -69,6 +71,9 @@
 }
 .textDark{
   color:$color-dark;
+}
+.textSecondary{
+  color:$color-secondary;
 }
 .placeholderDisabled::placeholder{
   color:$color-disabled;
