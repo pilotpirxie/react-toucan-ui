@@ -109,7 +109,7 @@ export function NumericInput({
             inputRef.current!.stepUp();
             setInputStatus(inputState.filled);
           }}
-          className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
+          className={cx(styles.backgroundDark, styles.outlined)}
         >
           <NavArrowUp strokeWidth={5} width={10} height={8} />
         </button>
@@ -120,7 +120,7 @@ export function NumericInput({
             inputRef.current!.stepDown();
             setInputStatus(inputState.filled);
           }}
-          className={cx(styles.backgroundDark, styles.outlined, styles.outlineThin)}
+          className={cx(styles.backgroundDark, styles.outlined)}
         >
           <NavArrowDown strokeWidth={5} width={10} height={8} />
         </button>
