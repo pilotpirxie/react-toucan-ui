@@ -4,7 +4,7 @@
   &.outlined {
     background-color: rgba(0, 0, 0, 0);
     color: $bgColor;
-    outline: 2px solid $bgColor;
+    outline: 1px solid $bgColor;
 
     &:hover {
       background-color: $bgColor;
@@ -17,7 +17,7 @@
     }
 
     &:disabled {
-      outline: 2px solid lighten($bgColor, 40%);
+      outline: 1px solid lighten($bgColor, 40%);
       color: $color-disabled;
       &:hover {
         background-color: rgba(0, 0, 0, 0);
@@ -98,7 +98,4 @@
 
 .backgroundDark {
   @include background($color-dark, white);
-}
-.outlineThin{
-  outline-width: 1px !important;
 }
