@@ -7,7 +7,7 @@ export default {
   title: 'Form/Button',
   component: Button,
   argTypes: {
-    buttonStyle: {
+    styling: {
       options: ['standard', 'outlined', 'link'],
       control: { type: 'select' },
     },
@@ -32,14 +32,14 @@ export const Outlined = Template.bind({});
 Outlined.args = {
   color: 'primary',
   children: 'Button',
-  buttonStyle: 'outlined',
+  styling: 'outlined',
 };
 
 export const Link = Template.bind({});
 Link.args = {
   color: 'primary',
   children: 'Button',
-  buttonStyle: 'link',
+  styling: 'link',
 };
 
 export const Disabled = Template.bind({});
